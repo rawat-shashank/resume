@@ -24,9 +24,9 @@ jobs:
       - name: npm install
         run: npm install
       - name: Build
-        run: ng build
-      - name: Push Build to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "dist/angular-githubaction/*"
-          token: ${{ secrets.TOKEN }}
+        run: npm run build
+      # - name: Push Build to Releases
+      #   uses: ncipollo/release-action@v1
+      # with:
+      #   artifacts: "dist/angular-githubaction/*"
+      #   token: ${{ secrets.TOKEN }}
