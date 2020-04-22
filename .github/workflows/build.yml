@@ -34,7 +34,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
           BASE_BRANCH: verticalScroll
           BRANCH: gh-pages
           FOLDER: dist/resume
