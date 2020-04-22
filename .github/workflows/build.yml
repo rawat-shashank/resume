@@ -30,7 +30,7 @@ jobs:
       - name: npm install
         run: npm install
       - name: Build
-        run: ng build --prod --base-href="/resume/
+        ng build --prod --base-href="/resume/"
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
