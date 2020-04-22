@@ -1,5 +1,9 @@
 on: push
 name: Build Angular
+push:
+  branches:
+    - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,12 +25,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: npm install angular
+        run: npm install -g @angular/cli
       - name: npm install
         run: npm install
       - name: Build
-        run: npm run build
-      # - name: Push Build to Releases
-      #   uses: ncipollo/release-action@v1
-      # with:
-      #   artifacts: "dist/angular-githubaction/*"
-      #   token: ${{ secrets.TOKEN }}
+        run: ng build --prod --base-href="/resume/
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: verticalScroll
+          BRANCH: gh-pages
+          FOLDER: dist/resume
