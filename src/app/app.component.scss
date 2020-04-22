@@ -1,0 +1,23 @@
+@import "./material/variables";
+
+.active {
+    background-color: $accent;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 6rem;
+}
+
+section {
+    margin-bottom: 15rem;
+}
+
+.app-profile {
+    margin: 0 2rem;
+}
+
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: transparent !important;
+}

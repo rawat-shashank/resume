@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/material/theme.scss";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+    background-color: $background;
+    scroll-behavior: smooth;
+}

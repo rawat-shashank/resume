@@ -1,0 +1,20 @@
+<div class="timeline">
+  <div
+    class="container"
+    *ngFor="let item of items; let i = index"
+    [ngClass]="i % 2 == 0 ? 'left' : 'right'"
+  >
+    <div class="content">
+      <h2>{{ item.title }}</h2>
+      <h3>{{ item.duration }}</h3>
+      <h5>{{ item.company }} - {{ item.location }}</h5>
+      <p *ngIf="item.description">
+        {{ item.description }}
+      </p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eum
+      voluptatem alias a, consequuntur distinctio, molestias vero aliquam hic
+      veritatis ullam quibusdam similique possimus impedit laborum, magnam
+      perspiciatis nulla quo.
+    </div>
+  </div>
+</div>

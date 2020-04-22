@@ -1,0 +1,44 @@
+mat-card {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 3rem;
+
+    .card-right {
+        margin: 2rem 0;
+
+        h1 {
+            font-weight: 400;
+            margin-bottom: 1rem !important;
+            padding: 0 !important;
+            font-size: 2.5rem;
+        }
+
+        h5 {
+            color: #848484 !important;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        button {
+            margin-top: 2rem;
+            margin-right: 1rem;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 3rem;
+
+            tr {
+                line-height: 2rem;
+                td {
+                    width: 70%;
+                    color: #848484;
+                }
+                td:first-child {
+                    width: 30%;
+                    color: #444444;
+                }
+            }
+        }
+    }
+}

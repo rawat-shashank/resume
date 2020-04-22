@@ -1,0 +1,50 @@
+@import "./colors";
+@import "./variables";
+
+@import "~@angular/material/theming";
+@include mat-core();
+$custom-theme-primary: mat-palette($mat-primary, 500);
+$custom-theme-accent: mat-palette($mat-accent, 500);
+$custom-theme-warn: mat-palette($mat-warn);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    width: 60% !important;
+    margin: 0 auto !important;
+    background-color: white;
+}
+
+mat-sidenav-container {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $background !important;
+}
+
+mat-sidenav {
+    background-color: $background;
+}
+mat-sidenav-content {
+    // width: 60%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 960px) {
+    mat-sidenav-content {
+        width: 100%;
+    }
+}

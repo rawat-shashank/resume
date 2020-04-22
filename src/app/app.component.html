@@ -1,21 +1,80 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <div class="app-profile">
+      <app-profile
+        isName="Shashank Rawat"
+        height="150"
+        width="150"
+      ></app-profile>
+    </div>
+    <mat-list>
+      <mat-list-item
+        *ngFor="let link of navLinks"
+        [routerLink]="link.link"
+        routerLinkActive="active"
+        #rla="routerLinkActive"
+      >
+        {{ link.label }}
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
 
-<router-outlet></router-outlet>
+  <mat-sidenav-content cdkscrollable>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span style="flex: 1 1 auto;" routerLink="/">Shashank Rawat</span>
+      <ng-container *ngIf="!isMobile">
+        <a
+          mat-button
+          *ngFor="let link of ids; let i = index"
+          [href]="'#' + link"
+          [ngClass]="{ active: currentActive === i }"
+          style="text-transform: capitalize;"
+          (click)="scrollToElement(link)"
+        >
+          {{ i }} - {{ currentActive }}
+          {{ link }}
+        </a>
+      </ng-container>
+    </mat-toolbar>
+    <main>
+      <section *ngFor="let link of ids" [attr.id]="link" #links>
+        <app-about *ngIf="link === 'about'"></app-about>
+        <app-skills *ngIf="link === 'skills'"></app-skills>
+        <app-experience *ngIf="link === 'experience'"></app-experience>
+        <app-education *ngIf="link === 'education'"></app-education>
+      </section>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<mat-toolbar color="primary">
+  <!-- <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span style="flex: 1 1 auto;" routerLink="/">Shashank Rawat</span>
+  <ng-container *ngIf="!isMobile">
+    <a
+      mat-button
+      *ngFor="let link of ids; let i = index"
+      [href]="'#' + link"
+      [ngClass]="{ active: currentActive === i }"
+      [routerLink]="'.'"
+      [fragment]="link"
+      style="text-transform: capitalize;"
+    >
+      {{ link }}
+    </a>
+  </ng-container>
+</mat-toolbar>
+<main>
+  <section *ngFor="let link of ids" [attr.id]="link" #links>
+    <app-about *ngIf="link === 'about'"></app-about>
+    <app-skills *ngIf="link === 'skills'"></app-skills>
+    <app-experience *ngIf="link === 'experience'"></app-experience>
+    <app-education *ngIf="link === 'education'"></app-education>
+  </section>
+  <!-- <router-outlet (activate)="onActivate($event)"></router-outlet> -->
+</main>
