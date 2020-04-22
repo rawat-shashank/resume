@@ -2,7 +2,7 @@ name: Build Angular
 on:
   push:
     branches:
-      - verticalScroll
+      - master
 
 jobs:
   build:
@@ -35,6 +35,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
           ACCESS_TOKEN: ${{ secrets.TOKEN }}
-          BASE_BRANCH: verticalScroll
+          BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: dist/resume
