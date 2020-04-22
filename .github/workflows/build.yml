@@ -1,8 +1,8 @@
-on: push
 name: Build Angular
-push:
-  branches:
-    - master
+on:
+  push:
+    branches:
+      - verticalScroll
 
 jobs:
   build:
