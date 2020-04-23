@@ -8,8 +8,8 @@ import { DomSanitizer } from "@angular/platform-browser";
     <div class="profile">
       <img
         src="assets/img/me.jpg"
-        [style.height.px]="height ? height : 250"
-        [style.width.px]="width ? width : 250"
+        [style.height.px]="height ? height : 200"
+        [style.width.px]="width ? width : 200"
       />
     </div>
     <h3 *ngIf="isName" style="{text-align: center;}">{{ isName }}</h3>
@@ -43,8 +43,13 @@ import { DomSanitizer } from "@angular/platform-browser";
         vertical-align: middle;
       }
 
+      .mat-icon-button {
+        transform: scale(0.8);
+      }
+
       .icons {
         text-align: center;
+        color: #848484;
       }
     `,
   ],
@@ -67,13 +72,13 @@ export class ProfileComponent {
     this.matIconRegistry.addSvgIcon(
       `linkedin`,
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        "/assets/icons/linkedin-in-brands.svg"
+        "assets/icons/linkedin-in-brands.svg"
       )
     );
     this.matIconRegistry.addSvgIcon(
       `github`,
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        "/assets/icons/github-brands.svg"
+        "assets/icons/github-brands.svg"
       )
     );
   }

@@ -1,13 +1,12 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule, ExtraOptions } from "@angular/router";
-import { AboutComponent } from "./components/about/about.component";
 import { AppComponent } from "./app.component";
 
 const routerOptions: ExtraOptions = {
   onSameUrlNavigation: "reload",
   scrollPositionRestoration: "enabled",
   anchorScrolling: "enabled",
-  scrollOffset: [0, 160],
+  scrollOffset: [0, 50],
 };
 
 const routes: Routes = [{ path: "", component: AppComponent }];

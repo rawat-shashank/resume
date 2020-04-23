@@ -7,7 +7,11 @@ $custom-theme-primary: mat-palette($mat-primary, 500);
 $custom-theme-accent: mat-palette($mat-accent, 500);
 $custom-theme-warn: mat-palette($mat-warn);
 $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+$custom-typography: mat-typography-config(
+    $font-family: "Roboto, Sans-sarif",
+);
 
+@include angular-material-typography($custom-typography);
 @include angular-material-theme($custom-theme);
 
 html,

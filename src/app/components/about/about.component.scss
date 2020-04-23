@@ -1,35 +1,38 @@
 mat-card {
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-gap: 3rem;
+    grid-template-rows: 2fr 2fr;
+    margin: 1rem;
 
     .card-right {
-        margin: 2rem 0;
-
-        h1 {
-            font-weight: 400;
-            margin-bottom: 1rem !important;
-            padding: 0 !important;
-            font-size: 2.5rem;
-        }
-
+        text-align: center;
+        margin-top: 2rem;
+        h1,
         h5 {
-            color: #848484 !important;
+            font-weight: 400;
+        }
+        h1 {
+            font-size: 1.6875rem;
+        }
+        h5 {
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
             font-size: 1rem;
-            font-weight: 500;
+            color: #848484;
         }
 
-        button {
-            margin-top: 2rem;
-            margin-right: 1rem;
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+            padding: 0rem 2rem;
         }
 
         table {
             width: 100%;
             margin-top: 3rem;
-
             tr {
                 line-height: 2rem;
+                text-align: left;
                 td {
                     width: 70%;
                     color: #848484;
@@ -42,3 +45,48 @@ mat-card {
         }
     }
 }
+
+// mat-card {
+//     display: grid;
+//     grid-template: 2fr 3fr;
+//     grid-gap: 3rem;
+
+//     .card-right {
+//         margin: 2rem 0;
+
+//         h1 {
+//             font-weight: 400;
+//             margin-bottom: 1rem !important;
+//             padding: 0 !important;
+//             font-size: 2.5rem;
+//         }
+
+//         h5 {
+//             color: #848484 !important;
+//             font-size: 1rem;
+//             font-weight: 500;
+//         }
+
+//         button {
+//             margin-top: 2rem;
+//             margin-right: 1rem;
+//         }
+
+//         table {
+//             width: 100%;
+//             margin-top: 3rem;
+
+//             tr {
+//                 line-height: 2rem;
+//                 td {
+//                     width: 70%;
+//                     color: #848484;
+//                 }
+//                 td:first-child {
+//                     width: 30%;
+//                     color: #444444;
+//                 }
+//             }
+//         }
+//     }
+// }

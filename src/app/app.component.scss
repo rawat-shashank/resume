@@ -1,23 +1,59 @@
 @import "./material/variables";
 
+// .active {
+//     background-color: $accent;
+// }
+
+// .fab-menu {
+//     position: fixed;
+//     bottom: 1rem;
+//     right: 1rem;
+// }
+
+// main {
+//     width: 60%;
+//     margin: 0 auto;
+//     margin-top: 6rem;
+// }
+
+// section {
+//     margin-bottom: 15rem;
+// }
+
+// .app-profile {
+//     margin: 0 2rem;
+// }
+
+// ::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+//     background-color: transparent !important;
+// }
+
+nav,
+main,
+mat-toolbar,
+section {
+    width: 100%;
+}
+
+main {
+    margin-top: 3.125rem;
+
+    section {
+        margin-bottom: 5rem;
+    }
+}
+
 .active {
     background-color: $accent;
 }
 
-main {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 6rem;
+.fab-menu {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
 }
 
-section {
-    margin-bottom: 15rem;
-}
-
-.app-profile {
-    margin: 0 2rem;
-}
-
-::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
-    background-color: transparent !important;
+a {
+    text-transform: capitalize;
+    padding-right: 5rem;
 }
