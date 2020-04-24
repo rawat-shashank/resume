@@ -27,8 +27,19 @@
 </main>
 
 <div *ngIf="isMobile" class="fab-menu">
-  <button mat-fab color="primary" [matMenuTriggerFor]="fab_menu">
-    <mat-icon>menu</mat-icon>
+  <button
+    mat-fab
+    color="primary"
+    [matMenuTriggerFor]="fab_menu"
+    (menuOpened)="isMenuOpen = true"
+    (menuClosed)="isMenuOpen = false"
+  >
+    <div class="menu-icon" [ngClass]="{ 'menu-icon--animate': isMenuOpen }">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <!-- <mat-icon>menu</mat-icon> -->
   </button>
   <mat-menu #fab_menu="matMenu">
     <a

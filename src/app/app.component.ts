@@ -24,6 +24,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   breakPointSubscription: Subscription;
   ids: Array<String> = ["about", "skills", "experience", "education"];
   isMobile: boolean;
+  isMenuOpen = false;
 
   //for scroll
   @ViewChildren("links") links: QueryList<ElementRef>;
