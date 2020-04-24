@@ -37,22 +37,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   @HostListener("window:scroll", ["$event"])
   checkOffsetTop($event) {
     if (
-      window.pageYOffset >= this.aboutElementOffset &&
-      window.pageYOffset < this.skillsElementOffset
+      window.pageYOffset + 100 >= this.skillsElementOffset &&
+      window.pageYOffset + 100 < this.experienceElementOffset
     ) {
       this.currentActive = 1;
     } else if (
-      window.pageYOffset >= this.skillsElementOffset &&
-      window.pageYOffset < this.experienceElementOffset
+      window.pageYOffset + 100 >= this.experienceElementOffset &&
+      window.pageYOffset + 100 < this.educationElementOffset
     ) {
       this.currentActive = 2;
-    } else if (
-      window.pageYOffset >= this.experienceElementOffset &&
-      window.pageYOffset < this.educationElementOffset
-    ) {
+    } else if (window.pageYOffset + 100 >= this.educationElementOffset) {
       this.currentActive = 3;
-    } else if (window.pageYOffset >= this.educationElementOffset) {
-      this.currentActive = 4;
     } else {
       this.currentActive = 0;
     }
@@ -63,9 +58,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     public route: ActivatedRoute
   ) {
     this.breakPointSubscription = breakpointObserver
-      .observe([Breakpoints.Handset])
+      .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
       .subscribe((result) =>
-        result.matches ? (this.isMobile = true) : (this.isMobile = false)
+        result.matches ? (this.isMobile = false) : (this.isMobile = true)
       );
   }
 

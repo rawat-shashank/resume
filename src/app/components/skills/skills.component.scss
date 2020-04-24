@@ -22,6 +22,16 @@
     }
 }
 
+@media only screen and (min-width: 960px) {
+    /* For medium screen: */
+    .skills {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+}
+
 // .skills {
 //     display: grid;
 //     grid-template-columns: 1fr 1fr;
