@@ -26,7 +26,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   styles: [
     `
       .profile {
-        margin: 2rem 0;
+        margin: 2rem 0 1rem 0;
         text-align: center;
       }
 

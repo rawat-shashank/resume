@@ -5,7 +5,6 @@ mat-card {
 
     .card-right {
         text-align: center;
-        margin-top: 2rem;
         h1,
         h5 {
             font-weight: 400;
@@ -24,7 +23,7 @@ mat-card {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 1rem;
-            padding: 0rem 2rem;
+            padding: 0rem 1rem;
         }
 
         table {
@@ -46,47 +45,26 @@ mat-card {
     }
 }
 
-// mat-card {
-//     display: grid;
-//     grid-template: 2fr 3fr;
-//     grid-gap: 3rem;
+@media only screen and (min-width: 960px) {
+    /* For medium screen: */
+    mat-card {
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: none;
+        grid-gap: 3rem;
+        margin: 0;
 
-//     .card-right {
-//         margin: 2rem 0;
+        .card-right {
+            margin: 2rem 0;
+            text-align: left;
 
-//         h1 {
-//             font-weight: 400;
-//             margin-bottom: 1rem !important;
-//             padding: 0 !important;
-//             font-size: 2.5rem;
-//         }
+            .action-buttons {
+                display: inline;
+                padding: 0;
 
-//         h5 {
-//             color: #848484 !important;
-//             font-size: 1rem;
-//             font-weight: 500;
-//         }
-
-//         button {
-//             margin-top: 2rem;
-//             margin-right: 1rem;
-//         }
-
-//         table {
-//             width: 100%;
-//             margin-top: 3rem;
-
-//             tr {
-//                 line-height: 2rem;
-//                 td {
-//                     width: 70%;
-//                     color: #848484;
-//                 }
-//                 td:first-child {
-//                     width: 30%;
-//                     color: #444444;
-//                 }
-//             }
-//         }
-//     }
-// }
+                button {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

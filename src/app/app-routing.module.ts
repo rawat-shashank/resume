@@ -6,7 +6,7 @@ const routerOptions: ExtraOptions = {
   onSameUrlNavigation: "reload",
   scrollPositionRestoration: "enabled",
   anchorScrolling: "enabled",
-  scrollOffset: [0, 50],
+  scrollOffset: [0, 100],
 };
 
 const routes: Routes = [{ path: "", component: AppComponent }];

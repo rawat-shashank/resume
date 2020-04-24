@@ -1,22 +1,19 @@
-<nav>
-  <mat-toolbar color="primary" *ngIf="!isMobile">
-    <!-- <button mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button> -->
-    <span style="flex: 1 1 auto;" routerLink="/">Shashank Rawat</span>
-    <ng-container *ngIf="!isMobile">
+<nav *ngIf="!isMobile">
+  <mat-toolbar color="primary">
+    <div style="flex: 1 1 auto;">
+      <span style="cursor: pointer;" routerLink="/">Shashank Rawat</span>
+    </div>
+    <div *ngIf="!isMobile" class="nav__list">
       <a
-        mat-button
         *ngFor="let link of ids; let i = index"
         [href]="'#' + link"
         [ngClass]="{ active: currentActive === i }"
         [routerLink]="'.'"
         [fragment]="link"
-        style="text-transform: capitalize;"
       >
         {{ link }}
       </a>
-    </ng-container>
+    </div>
   </mat-toolbar>
 </nav>
 
@@ -31,7 +28,7 @@
 
 <div *ngIf="isMobile" class="fab-menu">
   <button mat-fab color="primary" [matMenuTriggerFor]="fab_menu">
-    <mat-icon>add</mat-icon>
+    <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #fab_menu="matMenu">
     <a
