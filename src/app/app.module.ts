@@ -13,6 +13,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { HttpClientModule } from "@angular/common/http";
 import { VerticalTimelineComponent } from "./components/shared/vertical-timeline/vertical-timeline";
 import { EducationComponent } from "./components/education/education.component";
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { EducationComponent } from "./components/education/education.component";
     ProfileComponent,
     VerticalTimelineComponent,
     EducationComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,

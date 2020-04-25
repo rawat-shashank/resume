@@ -1,0 +1,29 @@
+<div class="project">
+  <h2>Projects</h2>
+
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let data of dataList; first as isFirst"
+      [expanded]="isFirst"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ data.title }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ data.company }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-chip-list>
+        <ng-container *ngFor="let tech of data.tech">
+          <mat-chip color="warn" selected>{{ tech }}</mat-chip>
+        </ng-container>
+      </mat-chip-list>
+      <ng-template matExpansionPanelContent>
+        <p>
+          {{ data.desc }}
+        </p>
+      </ng-template>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

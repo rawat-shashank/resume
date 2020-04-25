@@ -4,8 +4,25 @@
     <h1>Shashank Rawat</h1>
     <h5>Sr. Software Engineer (FULL STACK)</h5>
     <div class="action-buttons">
-      <button mat-raised-button color="primary">DOWNLOAD CV</button>
-      <button mat-raised-button color="warn">CONTACT</button>
+      <!-- <button mat-raised-button color="primary" (click)="onNavigate()">
+        DOWNLOAD CV
+      </button> -->
+      <a
+        mat-raised-button
+        color="primary"
+        href="assets/Resume.pdf"
+        target="_blank"
+        download
+        >DOWNLOAD CV</a
+      >
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="onContact()"
+        *ngIf="isMobile"
+      >
+        CONTACT
+      </button>
     </div>
     <table>
       <tr>

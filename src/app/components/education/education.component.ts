@@ -14,7 +14,7 @@ export class EducationComponent {
     description: string;
   }[] = [
     {
-      title: "B. Tech",
+      title: "B. Tech - CSE",
       duration: "2010 - 2014",
       company: "Lovely Professional University",
       location: "Punjab",
