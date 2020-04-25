@@ -40,5 +40,12 @@ export class ProjectsComponent {
       desc:
         "An implementation of Kanban board, an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow). Kanban boards use cards as taks, columns to visualize request list, in progress tasks list and completed tasks list.",
     },
+    {
+      title: "Web Resume",
+      company: "Personal",
+      tech: ["Angular 8", "Angular Material", "Github Actions CI/CD"],
+      desc:
+        "A novel approach to showcase few of my skills as well as providing a visually appealing fully responsive resume with easy navigation.",
+    },
   ];
 }
