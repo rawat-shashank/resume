@@ -20,7 +20,7 @@ export class AboutComponent implements OnDestroy {
   }
 
   onContact() {
-    const url = "https://api.whatsapp.com/send?phone=7276521821";
+    const url = "https://api.whatsapp.com/send?phone=+917276521821";
     var win = window.open(url, "_blank");
     if (win) {
       //Browser has allowed it to be opened
