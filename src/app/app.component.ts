@@ -22,7 +22,13 @@ import { share } from "rxjs/operators";
 export class AppComponent implements AfterViewInit, OnDestroy {
   activeFragment = this.route.fragment.pipe(share());
   breakPointSubscription: Subscription;
-  ids: Array<String> = ["about", "skills", "experience", "education"];
+  ids: Array<String> = [
+    "about",
+    "skills",
+    "experience",
+    "projects",
+    "education",
+  ];
   isMobile: boolean;
   isMenuOpen = false;
 
@@ -33,22 +39,28 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   aboutElementOffset: Number = null;
   skillsElementOffset: Number = null;
   experienceElementOffset: Number = null;
+  projectsElementOffset: Number = null;
   educationElementOffset: Number = null;
 
   @HostListener("window:scroll", ["$event"])
   checkOffsetTop($event) {
-    if (
-      window.pageYOffset + 100 >= this.skillsElementOffset &&
-      window.pageYOffset + 100 < this.experienceElementOffset
-    ) {
-      this.currentActive = 1;
+    if (window.pageYOffset + 200 >= this.educationElementOffset) {
+      this.currentActive = 4;
     } else if (
-      window.pageYOffset + 100 >= this.experienceElementOffset &&
-      window.pageYOffset + 100 < this.educationElementOffset
+      window.pageYOffset + 200 < this.educationElementOffset &&
+      window.pageYOffset + 200 >= this.projectsElementOffset
+    ) {
+      this.currentActive = 3;
+    } else if (
+      window.pageYOffset + 200 < this.projectsElementOffset &&
+      window.pageYOffset + 200 >= this.experienceElementOffset
     ) {
       this.currentActive = 2;
-    } else if (window.pageYOffset + 100 >= this.educationElementOffset) {
-      this.currentActive = 3;
+    } else if (
+      window.pageYOffset + 200 < this.experienceElementOffset &&
+      window.pageYOffset + 200 >= this.skillsElementOffset
+    ) {
+      this.currentActive = 1;
     } else {
       this.currentActive = 0;
     }
@@ -76,6 +88,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
           break;
         case "experience":
           this.experienceElementOffset = link.nativeElement.offsetTop;
+          break;
+        case "projects":
+          this.projectsElementOffset = link.nativeElement.offsetTop;
           break;
         case "education":
           this.educationElementOffset = link.nativeElement.offsetTop;

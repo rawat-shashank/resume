@@ -90,6 +90,24 @@
     padding: 20px 30px;
     background-color: white;
     position: relative;
+
+    h5,
+    p {
+        color: #848484;
+    }
+
+    p {
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        // margin-top: 1rem;
+        font-weight: 600;
+    }
+
+    h4 {
+        margin-top: 0.5rem;
+    }
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
