@@ -42,29 +42,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   projectsElementOffset: Number = null;
   educationElementOffset: Number = null;
 
-  @HostListener("window:scroll", ["$event"])
-  checkOffsetTop($event) {
-    if (window.pageYOffset + 200 >= this.educationElementOffset) {
-      this.currentActive = 4;
-    } else if (
-      window.pageYOffset + 200 < this.educationElementOffset &&
-      window.pageYOffset + 200 >= this.projectsElementOffset
-    ) {
-      this.currentActive = 3;
-    } else if (
-      window.pageYOffset + 200 < this.projectsElementOffset &&
-      window.pageYOffset + 200 >= this.experienceElementOffset
-    ) {
-      this.currentActive = 2;
-    } else if (
-      window.pageYOffset + 200 < this.experienceElementOffset &&
-      window.pageYOffset + 200 >= this.skillsElementOffset
-    ) {
-      this.currentActive = 1;
-    } else {
-      this.currentActive = 0;
-    }
-  }
+  observer: any;
 
   constructor(
     breakpointObserver: BreakpointObserver,
@@ -77,7 +55,59 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       );
   }
 
+  doTheThing(e: any) {
+    switch (e.target.id) {
+      case "about":
+        this.currentActive = 0;
+        break;
+      case "skills":
+        this.currentActive = 1;
+        break;
+      case "experience":
+        this.currentActive = 2;
+        break;
+      case "projects":
+        this.currentActive = 3;
+        break;
+      case "education":
+        this.currentActive = 4;
+        break;
+
+      default:
+        this.currentActive = 0;
+        break;
+    }
+  }
+
   ngAfterViewInit() {
+    const config = {
+      rootMargin: "0px 0px -20% 0px",
+      threshold: [0.5, 0.75, 1.0],
+    };
+    this.links.forEach((link) => {
+      const elHeight = link.nativeElement.getBoundingClientRect().height;
+      const threshold = 0.5;
+      let th = threshold;
+
+      // The element is too tall to ever hit the threshold - change threshold
+      if (elHeight > window.innerHeight * threshold) {
+        th = ((window.innerHeight * threshold) / elHeight) * threshold;
+      }
+
+      const config = {
+        rootMargin: "0% 0px -20% 0px",
+        threshold: [0.25, 0.5, 0.75, 1.0],
+      };
+
+      new IntersectionObserver((iEls) => {
+        iEls.forEach((iEl) => {
+          if (iEl.intersectionRatio >= th && iEl.intersectionRatio <= 1.0) {
+            this.doTheThing(iEl);
+          }
+        });
+      }, config).observe(link.nativeElement);
+    });
+
     this.links.forEach((link) => {
       switch (link.nativeElement.id) {
         case "about":

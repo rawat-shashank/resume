@@ -15,7 +15,7 @@ nav {
 
 main {
     section {
-        margin-bottom: 20rem;
+        margin-bottom: 8rem;
     }
 }
 
@@ -97,7 +97,7 @@ a {
         width: 80%;
         margin: 0 auto;
         margin-top: 2rem;
-        margin-bottom: 10vh;
+        // margin-bottom: 10vh;
     }
 }
 
@@ -113,6 +113,8 @@ a {
 
     main {
         margin-top: 2rem;
-        margin-bottom: 20vh;
+        section {
+            margin-bottom: 20vh;
+        }
     }
 }
