@@ -8,4 +8,14 @@
         margin: 1rem auto;
         color: #848488;
     }
+
+    mat-panel-description {
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .project {
+        margin: 0;
+    }
 }
